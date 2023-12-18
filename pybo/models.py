@@ -32,10 +32,10 @@ class Answer(models.Model):
     voter = models.ManyToManyField(User, related_name='voter_answer')  # 추천인 추가
 
 
-class Comment(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author_comment')
-    answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
-    create_date = models.DateTimeField()
-    voter = models.ManyToManyField(User, related_name='voter_comment') # 추천인 추가
-    modify_date = models.DateTimeField(null=True, blank=True)
-    modify_check = models.BooleanField(null=True, blank=True)
+# class Comment(models.Model):
+#     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='author_comment')
+#     answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
+#     create_date = models.DateTimeField()
+#     voter = models.ManyToManyField(User, related_name='voter_comment') # 추천인 추가
+#     modify_date = models.DateTimeField(null=True, blank=True)
+#     modify_check = models.BooleanField(null=True, blank=True)
