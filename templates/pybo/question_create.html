@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-3">
+    <form action="{% url 'pybo:question_create_complete'%}" method="post" class="my-3">
+        {% csrf_token %}
+        <div>
+            <label for="title" class="form-label">제목</label>
+            <textarea name="title" id="title" class="form-control" rows="1"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">질문내용</label>
+            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+        </div>
+        <input type="submit" value="질문등록" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}
